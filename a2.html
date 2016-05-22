@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+    <title>Bug Squasher</title>
+    
+    <link rel="stylesheet" type="text/css" href="./Semantic-UI-CSS-master/dist/semantic.min.css">
+    <script src="./Semantic-UI-CSS-master/dist/semantic.min.js" type="text/javascript"></script>
+    
+    <link rel="stylesheet" type="text/css" href="BugSquasherStyle.css" title="My Styles">
+    <script src="BugManager.js" type="text/javascript"></script>
+    <script src="BugSquashScript.js" type="text/javascript"></script>
+    
+    <!-- Script doesn't run for some reason -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#modal-button').click(function(){
+                $('#modal').modal('show');    
+            });
+        });
+       
+        
+    </script>
+</head>
+
+   <div class="ui modal" id="modaldiv">
+  <i class="close icon"></i>
+  <div class="header">
+    Profile Picture
+  </div>
+  <div class="image content">
+    <div class="ui medium image">
+      <img src="/images/avatar/large/chris.jpg">
+    </div>
+    <div class="description">
+      <div class="ui header">We've auto-chosen a profile image for you.</div>
+      <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
+      <p>Is it okay to use this photo?</p>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="ui black deny button">
+      Nope
+    </div>
+    <div class="ui positive right labeled icon button">
+      Yep, that's me
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+</div>
+
+<body onload="initBugCanvas()">
+    
+    <div class="ui equal width center aligned padded grid">
+        <div class="three wide computer two wide tablet four wide mobile column">
+            <div class="ui black segment" id = "game-column">
+                <!-- left side column -->
+                
+                <p id="high-score">Current High Score: 0</p>
+                <p id="heading">How to play:</p>
+                <h3 id="info">-Click on Bugs to Squish them!</p>
+                <h3 id="info">-Be careful not to lose your lunch!</p>
+                <h3 id="level-select">Select Level</h3>
+                <button class="ui black button" id="lvl1" onclick="setLevel1()">1</button>
+                <button class="ui black button" id="lvl2" onclick="setLevel2()">2</button>
+                <br>
+                <button class="ui inverted blue button" id="modal-button">Supposed to show start menu</button>
+            </div>
+        </div>
+        <div class="six wide computer three wide tablet six wide mobile column">
+            <div class="ui black segment" id = "game-column">
+                <!-- middle column -->
+                <canvas id="game" width = 400px height = 600px style="border: solid black">Sorry, but your browser does not support HTML Canvas</canvas>
+            </div>
+        </div>
+        <div class="two wide computer two wide tablet two wide mobile column">
+            <div class="ui segment" id = "game-column">
+                <p id="timer">Time: 60</p>
+                <br>
+                <button class="ui small button" onclick="pauseGame()" id="pause-button">
+                    <i class="pause icon" id="pause-button-icon"></i>
+                </button>
+                <br>
+                <br>
+                <p id="score">Score: 0</p>
+            </div>
+        </div>
+    </div>
+    <div class="ui modal" id="start">
+        <i class="bug"></i>
+        <div class="header">
+            Welcome to Bug Squasher
+        </div>
+        <div class="content">
+            
+        </div>
+    </div>   
+</body>
+</html>

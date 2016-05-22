@@ -1,0 +1,23 @@
+body {
+    background-color: black;
+}
+
+p {
+    font-family: fantasy;
+    color: blue;
+    font-size: 200%;
+}
+
+#info {
+    font-family: fantasy;
+    color: black;
+}
+
+#heading {
+    font-family: bold;
+    color: black;
+}
+
+#game-column{
+    height: 630px;
+}
